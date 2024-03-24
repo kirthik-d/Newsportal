@@ -64,13 +64,7 @@
 
                         </ul>
                     </div>
-                    <!-- Sidebar -->
-                    <div class="clearfix"></div>
-
-                    <div class="help-box">
-                        <h5 class="text-muted m-t-0">For Help ?</h5>
-                        <p class=""><span class="text-custom">Email:</span> <br/> phpgurukulofficial@gmail.com</p>
-                    </div>
+                    
 
                 </div>
                 <!-- Sidebar -left -->
