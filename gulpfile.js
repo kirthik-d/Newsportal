@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var pkg = require('./package.json');
+const express = require('express');
+const helmet = require('helmet');
+const app = express();
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
@@ -39,3 +42,9 @@ gulp.task('dev', ['browserSync'], function() {
   gulp.watch('./css/*.css', browserSync.reload);
   gulp.watch('./*.html', browserSync.reload);
 });
+
+//  Hide potentially dangerous information using helmet
+app.use(helmet.hidePoweredBy());
+
+// Mitigate the Risk of Clickjacking with helmet
+app.use(helmet.frameguard ({action: 'DENY'}))
